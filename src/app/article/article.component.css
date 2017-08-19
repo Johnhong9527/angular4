@@ -1,6 +1,12 @@
-.row{
+.row {
   display: -webkit-box;
 }
-.votes{
+
+.votes {
   padding: 15px;
+}
+
+.ui.large.header {
+  display: block;
+  margin: 1em 0 0 1em;
 }
