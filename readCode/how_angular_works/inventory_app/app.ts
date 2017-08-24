@@ -11,32 +11,31 @@ import {
   EventEmitter
 } from '@angular/core';
 
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import {NgModule} from "@angular/core";
+import {BrowserModule} from "@angular/platform-browser";
+import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 
 /**
  * Provides a `Product` object
  */
 class Product {
-  constructor(
-    public sku: string,
-    public name: string,
-    public imageUrl: string,
-    public department: string[],
-    public price: number) {
+  constructor(public sku: string,
+              public name: string,
+              public imageUrl: string,
+              public department: string[],
+              public price: number) {
   }
 }
 
 /**
- * @ProductImage: A component to show a single Product's image 
+ * @ProductImage: A component to show a single Product's image
  */
 @Component({
   selector: 'product-image',
   host: {class: 'ui small image'},
   inputs: ['product'],
   template: `
-  <img class="product-image" [src]="product.imageUrl">
+    <img class="product-image" [src]="product.imageUrl">
   `
 })
 class ProductImage {
@@ -44,19 +43,19 @@ class ProductImage {
 }
 
 /**
- * @ProductDepartment: A component to show the breadcrumbs to a 
+ * @ProductDepartment: A component to show the breadcrumbs to a
  * Product's department
  */
 @Component({
   selector: 'product-department',
   inputs: ['product'],
   template: `
-  <div class="product-department">
+    <div class="product-department">
     <span *ngFor="let name of product.department; let i=index">
       <a href="#">{{ name }}</a>
-      <span>{{i < (product.department.length-1) ? '>' : ''}}</span>
+      <span>{{i < (product.department.length - 1) ? '>' : ''}}</span>
     </span>
-  </div>
+    </div>
   `
 })
 class ProductDepartment {
@@ -64,14 +63,14 @@ class ProductDepartment {
 }
 
 /**
- * @PriceDisplay: A component to show the price of a 
+ * @PriceDisplay: A component to show the price of a
  * Product
  */
 @Component({
   selector: 'price-display',
   inputs: ['price'],
   template: `
-  <div class="price-display">\${{ price }}</div>
+    <div class="price-display">\${{ price }}</div>
   `
 })
 class PriceDisplay {
@@ -86,17 +85,17 @@ class PriceDisplay {
   inputs: ['product'],
   host: {'class': 'item'},
   template: `
-  <product-image [product]="product"></product-image>
-  <div class="content">
-    <div class="header">{{ product.name }}</div>
-    <div class="meta">
-      <div class="product-sku">SKU #{{ product.sku }}</div>
+    <product-image [product]="product"></product-image>
+    <div class="content">
+      <div class="header">{{ product.name }}</div>
+      <div class="meta">
+        <div class="product-sku">SKU #{{ product.sku }}</div>
+      </div>
+      <div class="description">
+        <product-department [product]="product"></product-department>
+      </div>
     </div>
-    <div class="description">
-      <product-department [product]="product"></product-department>
-    </div>
-  </div>
-  <price-display [price]="product.price"></price-display>
+    <price-display [price]="product.price"></price-display>
   `
 })
 class ProductRow {
@@ -104,7 +103,7 @@ class ProductRow {
 }
 
 /**
- * @ProductsList: A component for rendering all ProductRows and 
+ * @ProductsList: A component for rendering all ProductRows and
  * storing the currently selected Product
  */
 @Component({
@@ -112,14 +111,14 @@ class ProductRow {
   inputs: ['productList'],
   outputs: ['onProductSelected'],
   template: `
-  <div class="ui items">
-    <product-row 
-      *ngFor="let myProduct of productList" 
-      [product]="myProduct" 
-      (click)='clicked(myProduct)'
-      [class.selected]="isSelected(myProduct)">
-    </product-row>
-  </div>
+    <div class="ui items">
+      <product-row
+        *ngFor="let myProduct of productList"
+        [product]="myProduct"
+        (click)='clicked(myProduct)'
+        [class.selected]="isSelected(myProduct)">
+      </product-row>
+    </div>
   `
 })
 class ProductsList {
@@ -129,13 +128,13 @@ class ProductsList {
   productList: Product[];
 
   /**
-   * @output onProductSelected - outputs the current 
+   * @output onProductSelected - outputs the current
    *          Product whenever a new Product is selected
    */
   onProductSelected: EventEmitter<Product>;
 
   /**
-   * @property currentProduct - local state containing 
+   * @property currentProduct - local state containing
    *             the currently selected `Product`
    */
   private currentProduct: Product;
@@ -164,12 +163,12 @@ class ProductsList {
 @Component({
   selector: 'inventory-app',
   template: `
-  <div class="inventory-app">
-    <products-list 
-      [productList]="products" 
-      (onProductSelected)="productWasSelected($event)">
-    </products-list>
-  </div>
+    <div class="inventory-app">
+      <products-list
+        [productList]="products"
+        (onProductSelected)="productWasSelected($event)">
+      </products-list>
+    </div>
   `
 })
 class InventoryApp {
@@ -195,7 +194,7 @@ class InventoryApp {
         '/resources/images/products/black-hat.jpg',
         ['Men', 'Accessories', 'Hats'],
         29.99)
-      ];
+    ];
   }
 
   productWasSelected(product: Product): void {
@@ -204,18 +203,19 @@ class InventoryApp {
 }
 
 @NgModule({
-  declarations: [ 
+  declarations: [
     InventoryApp,
-    ProductImage, 
-    ProductDepartment, 
+    ProductImage,
+    ProductDepartment,
     PriceDisplay,
     ProductRow,
     ProductsList
   ],
-  imports: [ BrowserModule ],
-  bootstrap: [ InventoryApp ]
+  imports: [BrowserModule],
+  bootstrap: [InventoryApp]
 })
-class InventoryAppModule {}
+class InventoryAppModule {
+}
 
 platformBrowserDynamic().bootstrapModule(InventoryAppModule);
 
