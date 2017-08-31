@@ -1,3 +1,29 @@
 <div class="ui input">
+  <label for="">颜色&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
   <input type="text" name="color" value="{{color}}" #colorinput>
+</div>
+<div class="ui input">
+  <label for="">字体大小</label>
+  <input type="text" name="fontSize" value="{{fontSize}}" #fontinput>
+</div>
+<div>
+<span [ngStyle]="{color: 'red'}" >
+red text
+</span>
+</div>
+
+<button class="ui primary button" (click)="apply(colorinput.value, fontinput.value)">
+  Apply settings
+</button>
+
+<hr>
+<div>
+<span [ngStyle]="{color: color,'font-size': fontSize + 'px'}">
+{{ color }} text
+</span>
+</div>
+<div [style.background-color]="color"
+     [style.font-size.px]="fontSize"
+     style="color: white;">
+  {{ color }} background
 </div>

@@ -6,8 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inventory-app.component.css']
 })
 export class InventoryAppComponent implements OnInit {
-
-  constructor() { }
+  color:string;
+  fontSize:number;
+  constructor() {
+  }
+  apply(color: string, fontSize: number) {
+    this.color = color;
+    this.fontSize = fontSize;
+  }
 
   ngOnInit() {
   }
