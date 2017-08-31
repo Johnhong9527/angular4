@@ -1,0 +1,9 @@
+.bordered {
+  border: 1px dashed black;
+  background-color: #eee;
+}
+div {
+  margin: 2em 0;
+  border: 1px solid red;
+  padding: 3px;
+}

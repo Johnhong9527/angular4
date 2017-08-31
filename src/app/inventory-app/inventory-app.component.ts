@@ -6,15 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inventory-app.component.css']
 })
 export class InventoryAppComponent implements OnInit {
-  color:string;
-  fontSize:number;
+  isBordered: boolean;
+  classesObj: Object;
+  classList: string[];
   constructor() {
+    this.isBordered = true;
+    // this.classesObj = {
+    //   bordered : "bordered"
+    // };
+    this.classesObj = {
+      bordered : "bordered"
+    };
+    this.classList = ['blue', 'round'];
+    setTimeout(() => {
+      console.log(this)
+      console.log(this.classesObj)
+    },1000)
+    
   }
-  apply(color: string, fontSize: number) {
-    this.color = color;
-    this.fontSize = fontSize;
-  }
-
   ngOnInit() {
   }
 

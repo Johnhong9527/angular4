@@ -1,29 +1,31 @@
-<div class="ui input">
-  <label for="">颜色&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-  <input type="text" name="color" value="{{color}}" #colorinput>
-</div>
-<div class="ui input">
-  <label for="">字体大小</label>
-  <input type="text" name="fontSize" value="{{fontSize}}" #fontinput>
-</div>
-<div>
-<span [ngStyle]="{color: 'red'}" >
-red text
-</span>
-</div>
+<div [ngClass]="{bordered: false}">This is never bordered</div>
+<div [ngClass]="{bordered: true}">This is always bordered</div>
 
-<button class="ui primary button" (click)="apply(colorinput.value, fontinput.value)">
-  Apply settings
-</button>
+
+<div [ngClass]="classesObj">
+  Using object var. Border {{ classesObj.bordered ? "ON" : "OFF" }}
+</div>
 
 <hr>
-<div>
-<span [ngStyle]="{color: color,'font-size': fontSize + 'em'}">
-{{ color }} text
-</span>
+
+<div [ngClass]="{bordered: isBordered}">
+  Using object literal. Border {{ isBordered ? "ON" : "OFF" }}
 </div>
-<div [style.background-color]="color"
-     [style.font-size.em]="fontSize"
-     style="color: white;">
-  {{ color }} background
+<hr>
+<div class="base" [ngClass]="['blue', 'round']">
+  This will always have a blue background and
+  round corners
+</div>
+
+<div class="base" [ngClass]="classList">
+  This is {{ classList.indexOf('blue') > -1 ? "" : "NOT"}} blue
+  and {{ classList.indexOf('round') > -1 ? "" :"NOT" }} round
+</div>
+
+<hr>
+
+<div [ngClass]="classesObj.bordered">
+  hello
+  <br>
+  {{ classesObj.bordered ? "ON" : "OFF" }}
 </div>
