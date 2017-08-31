@@ -6,8 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ng-for.component.css']
 })
 export class NgForComponent implements OnInit {
-
-  constructor() { }
+  cities: string[];
+  people: Object[];
+  constructor() {
+    this.cities = ['Miami', 'Sao Paulo', 'New York'];
+    this.people = [
+    { name: 'Anderson', age: 35, city: 'Sao Paulo' },
+    { name: 'John', age: 12, city: 'Miami' },
+    { name: 'Peter', age: 22, city: 'New York' }
+    ];
+  }
 
   ngOnInit() {
   }
