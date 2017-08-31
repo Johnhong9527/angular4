@@ -18,12 +18,12 @@ red text
 
 <hr>
 <div>
-<span [ngStyle]="{color: color,'font-size': fontSize + 'px'}">
+<span [ngStyle]="{color: color,'font-size': fontSize + 'em'}">
 {{ color }} text
 </span>
 </div>
 <div [style.background-color]="color"
-     [style.font-size.px]="fontSize"
+     [style.font-size.em]="fontSize"
      style="color: white;">
   {{ color }} background
 </div>
