@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { HeroFromComponent } from './hero-from/hero-from.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeroFromComponent
   ],
   imports: [
     BrowserModule
