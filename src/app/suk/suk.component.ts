@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl,FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-suk',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SukComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    const ctrl = new FormControl('some value');
+    console.log(ctrl.value);     // 'some value'
+  }
 
   ngOnInit() {
   }
