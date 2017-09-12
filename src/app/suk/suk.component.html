@@ -1,13 +1,11 @@
 <div class="container">
 
   <h3>响应式表单的验证</h3>
-
+  <!--绑定内置from表单模板-->
   <form [formGroup]="heroForm" #formDir="ngForm">
-
+    <!-- submitted 控制 formDir 表单隐藏与显示-->
     <div [hidden]="formDir.submitted">
-
       <div class="form-group">
-
         <label for="name">Name</label>
         <input id="name" class="form-control"
                formControlName="name" required>
