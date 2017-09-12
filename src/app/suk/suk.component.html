@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1>Reactive Form</h1>
+  <h3>响应式表单的验证</h3>
 
   <form [formGroup]="heroForm" #formDir="ngForm">
 
@@ -46,17 +46,18 @@
       </div>
 
       <button type="submit" class="btn btn-default"
-              [disabled]="heroForm.invalid">Submit
+              [disabled]="heroForm.invalid">提交
       </button>
       <button type="button" class="btn btn-default"
-              (click)="formDir.resetForm({})">Reset
+              (click)="formDir.resetForm({})">重置
       </button>
     </div>
   </form>
 
   <div class="submitted-message" *ngIf="formDir.submitted">
-    <p>You've submitted your hero, {{ heroForm.value.name }}!</p>
-    <button (click)="formDir.resetForm({})">Add new hero</button>
+    <p>你提交了你的英雄, {{ heroForm.value.name }}!</p>
+    <!--resetForm({})为内置函数:清空表单已输入的内容-->
+    <button (click)="formDir.resetForm({})">添加新的英雄</button>
   </div>
 </div>
 
