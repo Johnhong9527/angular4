@@ -1,0 +1,25 @@
+<div class="ui raised segment">
+  <h2 class="ui header">Demo Form: Sku</h2>
+  <form [formGroup]="nameForm"
+        (ngSubmit)="onSubmit(nameForm.value)"
+        class="ui form">
+    <div class="field">
+      <label for="skuInput">SKU</label>
+      <input type="text"
+             id="skuInput"
+             placeholder="SKU"
+             [formControl]="nameForm.controls['sku']"
+             name="sku" ngModel>
+      <!--检查表单的有效性-->
+      <div *ngIf="!sku.valid" class="ui error message">SKU is invalid</div>
+      <!--当字段的 FormControl 无效时,我们也可以为该字段显示一条错误信息-->
+      <div *ngIf="sku.hasError('required', 'sku')" class="ui error message">SKU is required</div>
+    </div>
+    <div *ngIf="!nameForm.valid"
+         class="ui error message">Form is invalid
+    </div>
+    <div class="field"
+         [class.error]="!sku.valid && sku.touched"></div>
+    <button type="submit" class="ui button">Submit</button>
+  </form>
+</div>
