@@ -6,13 +6,15 @@ import {AppComponent} from './app.component';
 import {HeroFromComponent} from './hero-from/hero-from.component';
 import {SukComponent} from './suk/suk.component';
 import { FormcontrolComponent } from './formcontrol/formcontrol.component';
+import { FormBuilderComponent } from './form-builder/form-builder.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroFromComponent,
     SukComponent,
-    FormcontrolComponent
+    FormcontrolComponent,
+    FormBuilderComponent
   ],
   imports: [
     BrowserModule,
