@@ -5,12 +5,14 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {HeroFromComponent} from './hero-from/hero-from.component';
 import {SukComponent} from './suk/suk.component';
+import { FormcontrolComponent } from './formcontrol/formcontrol.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroFromComponent,
-    SukComponent
+    SukComponent,
+    FormcontrolComponent
   ],
   imports: [
     BrowserModule,

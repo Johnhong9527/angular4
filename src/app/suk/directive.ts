@@ -1,3 +1,4 @@
+// 引入依赖项
 import {Directive, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {AbstractControl, NG_VALIDATORS, Validator, ValidatorFn, Validators} from '@angular/forms';
 
@@ -18,6 +19,7 @@ export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
 }
 
 @Directive({
+  // selector 定义在表单中使用的数据
   selector: '[forbiddenName]',
   providers: [{provide: NG_VALIDATORS, useExisting: ForbiddenValidatorDirective, multi: true}]
 })
