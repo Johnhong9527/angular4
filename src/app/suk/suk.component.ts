@@ -8,11 +8,11 @@ import {forbiddenNameValidator} from './directive';
   templateUrl: './suk.component.html'
 })
 export class SukComponent implements OnInit {
-  // 定义 powers
+  // 定义数据
   powers = ['Really Smart', 'Super Flexible', 'Weather Changer'];
-  // 初始化 表单数据
   hero = {name: 'Dr.', alterEgo: 'Dr. What', power: this.powers[0]};
 
+  // 使用 FormGroup 注册 heroForm 表单
   heroForm: FormGroup;
 
   // 监听name输入格式是否符合要求
@@ -28,10 +28,12 @@ export class SukComponent implements OnInit {
       ]),
       // 绑定数据 到this中
       'alterEgo': new FormControl(this.hero.alterEgo),
+      // 验证 power是否无效
       'power': new FormControl(this.hero.power, Validators.required)
     });
   }
 
+  // 通过 get
   get name() {
     return this.heroForm.get('name');
   }

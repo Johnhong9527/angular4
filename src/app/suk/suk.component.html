@@ -2,25 +2,33 @@
 
   <h3>响应式表单的验证</h3>
   <!--绑定内置from表单模板-->
+  <!--formDir为form的ID,用来引入ngForm,做一些表单的操作-->
   <form [formGroup]="heroForm" #formDir="ngForm">
     <!-- submitted 控制 formDir 表单隐藏与显示-->
     <div [hidden]="formDir.submitted">
+
       <div class="form-group">
         <label for="name">Name</label>
         <input id="name" class="form-control"
                formControlName="name" required>
-
+        <!--表单信息验证-->
+        <!--(name.dirty || name.touched)的作用:
+        我们肯定不希望应用在用户还没有编辑过表单的时候就给他们显示错误提示。
+        对dirty和touched的检查可以避免这种问题。
+        改变控件的值会改变控件的dirty（脏）状态，
+        而当控件失去焦点时，就会改变控件的touched（碰过）状态
+        -->
         <div *ngIf="name.invalid && (name.dirty || name.touched)"
              class="alert alert-danger">
-
+          <!--错误信息提示-->
           <div *ngIf="name.errors.required">
-            Name is required.
+            名字无效.
           </div>
           <div *ngIf="name.errors.minlength">
-            Name must be at least 4 characters long.
+            名字最低长度不能低于4.
           </div>
           <div *ngIf="name.errors.forbiddenName">
-            Name cannot be Bob.
+            名字不能有bob出现.
           </div>
         </div>
       </div>
@@ -35,14 +43,15 @@
         <label for="power">Hero Power</label>
         <select id="power" class="form-control"
                 formControlName="power" required>
+          <!--ngFor 的应用-->
           <option *ngFor="let p of powers" [value]="p">{{p}}</option>
         </select>
-
+        <!--没有选择option返回报错信息-->
         <div *ngIf="power.invalid && power.touched" class="alert alert-danger">
           <div *ngIf="power.errors.required">Power is required.</div>
         </div>
       </div>
-
+      <!--查询表单是否返回报错信息,返回-->
       <button type="submit" class="btn btn-default"
               [disabled]="heroForm.invalid">提交
       </button>
