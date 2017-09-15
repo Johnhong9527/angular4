@@ -8,6 +8,7 @@ import {SukComponent} from './suk/suk.component';
 import { FormcontrolComponent } from './formcontrol/formcontrol.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { EventEmitterComponent } from './event-emitter/event-emitter.component';
+import { NgModelComponent } from './ng-model/ng-model.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EventEmitterComponent } from './event-emitter/event-emitter.component';
     SukComponent,
     FormcontrolComponent,
     FormBuilderComponent,
-    EventEmitterComponent
+    EventEmitterComponent,
+    NgModelComponent
   ],
   imports: [
     BrowserModule,
