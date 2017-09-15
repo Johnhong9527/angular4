@@ -1,5 +1,20 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, FormBuilder, Validators,AbstractControl} from "@angular/forms"
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  AbstractControl,
+  FormControl
+} from "@angular/forms"
+
+// 自定义验证器
+/*当输入值(控件的值 control.value )不是以 123 作为开始时,验证器会返回错误代码
+invalidSku 。*/
+function skuValidator(control: FormControl): { [s: string]: boolean } {
+  if (!control.value.match(/^123/)) {
+    return {invalidSku: true};
+  }
+}
 
 @Component({
   selector: 'form-builder',
@@ -12,10 +27,12 @@ export class FormBuilderComponent implements OnInit {
   sku: AbstractControl;
   // 注入: FormBuilder
   /*在这期间, Angular将会注入一个从 FormBuilder 类创建的对象实例,并把它赋值给 fb 变量(来
-自构造函数)*/
+  自构造函数)*/
   constructor(fb: FormBuilder) {
     this.nameForm = fb.group({
-      'sku': ['',Validators.required]
+      'sku': ['', Validators.compose([
+      Validators.required,skuValidator])
+      ]
     })
     this.sku = this.nameForm.controls['sku']
   }

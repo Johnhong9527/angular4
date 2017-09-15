@@ -1,25 +1,26 @@
 <div class="ui raised segment">
-  <h2 class="ui header">Demo Form: Sku</h2>
+  <h2 class="ui header">演示形式：具有自定义验证</h2>
   <form [formGroup]="nameForm"
         (ngSubmit)="onSubmit(nameForm.value)"
         class="ui form">
-    <div class="field">
+
+    <div class="field"
+        [class.error]="!sku.valid && sku.touched">
       <label for="skuInput">SKU</label>
       <input type="text"
              id="skuInput"
              placeholder="SKU"
-             [formControl]="nameForm.controls['sku']"
-             name="sku" ngModel>
-      <!--检查表单的有效性-->
-      <div *ngIf="!sku.valid" class="ui error message">SKU is invalid</div>
-      <!--当字段的 FormControl 无效时,我们也可以为该字段显示一条错误信息-->
-      <div *ngIf="sku.hasError('required', 'sku')" class="ui error message">SKU is required</div>
+             [formControl]="sku">
+       <div *ngIf="!sku.valid"
+         class="ui error message">SKU无效</div>
+       <div *ngIf="sku.hasError('required')"
+         class="ui error message">SKU是必需的</div>
+       <div *ngIf="sku.hasError('invalidSku')"
+         class="ui error message">SKU必须开头以<span>123</span>开始</div>
     </div>
+
     <div *ngIf="!nameForm.valid"
-         class="ui error message">Form is invalid
-    </div>
-    <div class="field"
-         [class.error]="!sku.valid && sku.touched"></div>
-    <button type="submit" class="ui button">Submit</button>
+      class="ui error message">表单无效</div>
+    <button type="submit" class="ui button">提交</button>
   </form>
 </div>
