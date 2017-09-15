@@ -63,7 +63,7 @@
 
   <div class="submitted-message" *ngIf="formDir.submitted">
     <p>你提交了你的英雄, {{ heroForm.value.name }}!</p>
-    <!--resetForm({})为内置函数:清空表单已输入的内容-->
+    <!--resetForm({})为内置函数:重置表单-->
     <button (click)="formDir.resetForm({})">添加新的英雄</button>
   </div>
 </div>

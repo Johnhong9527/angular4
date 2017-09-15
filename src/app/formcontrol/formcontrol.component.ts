@@ -12,8 +12,9 @@ export class FormcontrolComponent implements OnInit {
 
   constructor() {
   }
-  onSubmit(form: any):void {
-    console.log('你的提交值', form);
+  // 点击事件
+  OS(value: any):void {
+    console.log('你的提交值', value);
   }
 
   ngOnInit(): void {
