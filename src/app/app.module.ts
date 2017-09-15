@@ -7,6 +7,7 @@ import {HeroFromComponent} from './hero-from/hero-from.component';
 import {SukComponent} from './suk/suk.component';
 import { FormcontrolComponent } from './formcontrol/formcontrol.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
+import { EventEmitterComponent } from './event-emitter/event-emitter.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FormBuilderComponent } from './form-builder/form-builder.component';
     HeroFromComponent,
     SukComponent,
     FormcontrolComponent,
-    FormBuilderComponent
+    FormBuilderComponent,
+    EventEmitterComponent
   ],
   imports: [
     BrowserModule,
