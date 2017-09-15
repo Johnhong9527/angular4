@@ -9,6 +9,7 @@ import { FormcontrolComponent } from './formcontrol/formcontrol.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { EventEmitterComponent } from './event-emitter/event-emitter.component';
 import { NgModelComponent } from './ng-model/ng-model.component';
+import { OkComponent } from './ok/ok.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NgModelComponent } from './ng-model/ng-model.component';
     FormcontrolComponent,
     FormBuilderComponent,
     EventEmitterComponent,
-    NgModelComponent
+    NgModelComponent,
+    OkComponent
   ],
   imports: [
     BrowserModule,

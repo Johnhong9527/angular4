@@ -3,7 +3,6 @@ import {
   FormBuilder,
   FormGroup,
   Validators,
-  FormControl
 } from "@angular/forms"
 
 @Component({

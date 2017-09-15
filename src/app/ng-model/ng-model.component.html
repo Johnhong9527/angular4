@@ -1,3 +1,5 @@
+<input type="text" [(ngModel)]="NM">
+<input type="text" placeholder="{{NM}}">
 <div class="ui raised segment">
   <form [formGroup]="myForm"
         (ngSubmit)="onSubmit(myForm.value)"
@@ -9,13 +11,14 @@
              id="productNameInput"
              placeholder="Product Name"
              [formControl]="myForm.get('productName')"
-             [(ngModel)]="productName">
+             [(ngModel)]="PN">
     </div>
 
     <div class="ui info message">
-      The product name is: {{productName}}
+      The product name is: {{PN}}
     </div>
 
     <button type="submit" class="ui button">提交</button>
+    <button type="submit" class="ui button" (click)="myForm.reset()">重置</button>
   </form>
 </div>
