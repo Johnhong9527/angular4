@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import {MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -15,5 +16,5 @@ export class AppComponent {
   ];
 
   // MD
-
+  
 }
