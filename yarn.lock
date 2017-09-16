@@ -10,9 +10,15 @@
     source-map "^0.5.6"
     typescript "^2.3.3"
 
-"@angular/animations@^4.2.4":
-  version "4.3.5"
-  resolved "https://registry.npmjs.org/@angular/animations/-/animations-4.3.5.tgz#85aa454c887cc7cce11637ea5f6e9afad88490e1"
+"@angular/animations@^4.4.1":
+  version "4.4.1"
+  resolved "https://registry.npmjs.org/@angular/animations/-/animations-4.4.1.tgz#578d8951a273ee95936ab7f6cd933ff019ce0ffe"
+  dependencies:
+    tslib "^1.7.1"
+
+"@angular/cdk@^2.0.0-beta.10":
+  version "2.0.0-beta.10"
+  resolved "https://registry.npmjs.org/@angular/cdk/-/cdk-2.0.0-beta.10.tgz#7ffcc430d6f67dfde1df25e1fa693c188e4da08a"
   dependencies:
     tslib "^1.7.1"
 
@@ -126,6 +132,12 @@
 "@angular/language-service@^4.2.4":
   version "4.3.5"
   resolved "https://registry.npmjs.org/@angular/language-service/-/language-service-4.3.5.tgz#b6d882ea40d18d513fc3a035a79875029fe38f01"
+
+"@angular/material@^2.0.0-beta.10":
+  version "2.0.0-beta.10"
+  resolved "https://registry.npmjs.org/@angular/material/-/material-2.0.0-beta.10.tgz#23f5887d5e34da89dd6da1fe4da0b3f779da4807"
+  dependencies:
+    tslib "^1.7.1"
 
 "@angular/platform-browser-dynamic@^4.2.4":
   version "4.3.5"
@@ -2132,6 +2144,10 @@ globule@^1.0.0:
 graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.11"
   resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
+
+hammerjs@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.npmjs.org/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
 
 handle-thing@^1.2.5:
   version "1.2.5"

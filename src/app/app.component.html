@@ -1,2 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <h1>你好</h1>
+
+<md-select placeholder="Favorite food">
+  <md-option *ngFor="let food of foods" [value]="food.value">
+    {{ food.viewValue }}
+  </md-option>
+</md-select>
+
+<md-icon>home</md-icon>
