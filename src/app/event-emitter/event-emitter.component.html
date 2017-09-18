@@ -1,7 +1,7 @@
 <div class="ui raised segment">
   <h2 class="ui header">演示形式：具有自定义验证</h2>
-  <form [formGroup]="nameForm"
-        (ngSubmit)="onSubmit(nameForm.value)"
+  <form [formGroup]="myForm"
+        (ngSubmit)="onSubmit(myForm.value)"
         class="ui form">
 
     <div class="field"
@@ -19,7 +19,7 @@
          class="ui error message">SKU必须开头以<span>123</span>开始</div>
     </div>
 
-    <div *ngIf="!nameForm.valid"
+    <div *ngIf="!myForm.valid"
       class="ui error message">表单无效</div>
     <button type="submit" class="ui button">提交</button>
   </form>

@@ -1,7 +1,7 @@
 <div class="container">
   <div [hidden]="submitted">
     <h4>Hero Form</h4>
-    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" id="name"
@@ -34,8 +34,8 @@
         </div>
       </div>
 
-      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
-      <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
+      <button type="submit" class="btn btn-success" [disabled]="!myForm.form.valid">Submit</button>
+      <button type="button" class="btn btn-default" (click)="newHero(); myForm.reset()">New Hero</button>
     </form>
   </div>
 

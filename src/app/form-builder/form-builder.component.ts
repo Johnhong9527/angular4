@@ -23,18 +23,18 @@ function skuValidator(control: FormControl): { [s: string]: boolean } {
 })
 export class FormBuilderComponent implements OnInit {
   name: string;
-  nameForm: FormGroup;
+  myForm: FormGroup;
   sku: AbstractControl;
   // 注入: FormBuilder
   /*在这期间, Angular将会注入一个从 FormBuilder 类创建的对象实例,并把它赋值给 fb 变量(来
   自构造函数)*/
   constructor(fb: FormBuilder) {
-    this.nameForm = fb.group({
+    this.myForm = fb.group({
       'sku': ['', Validators.compose([
       Validators.required,skuValidator])
       ]
     })
-    this.sku = this.nameForm.controls['sku']
+    this.sku = this.myForm.controls['sku']
   }
 
   onSubmit(value: string): void {

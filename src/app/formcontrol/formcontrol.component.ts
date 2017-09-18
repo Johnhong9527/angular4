@@ -8,7 +8,7 @@ import {FormControl, FormGroup, Validator} from "@angular/forms"
 })
 export class FormcontrolComponent implements OnInit {
   name: string;
-  nameForm: FormGroup;
+  myForm: FormGroup;
 
   constructor() {
   }
@@ -18,7 +18,7 @@ export class FormcontrolComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.nameForm = new FormGroup({
+    this.myForm = new FormGroup({
       'name': new FormControl(this.name)
     })
   }

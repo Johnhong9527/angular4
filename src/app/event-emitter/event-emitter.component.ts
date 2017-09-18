@@ -22,18 +22,18 @@ function skuValidator(control: FormControl): { [s: string]: boolean } {
 })
 export class EventEmitterComponent implements OnInit {
   name: string;
-  nameForm: FormGroup;
+  myForm: FormGroup;
   sku: AbstractControl;
   // 注入: FormBuilder
   /*在这期间, Angular将会注入一个从 FormBuilder 类创建的对象实例,并把它赋值给 fb 变量(来
   自构造函数)*/
   constructor(fb: FormBuilder) {
-    this.nameForm = fb.group({
+    this.myForm = fb.group({
       'sku': ['', Validators.compose([
       Validators.required,skuValidator])
       ]
     })
-    this.sku = this.nameForm.controls['sku']
+    this.sku = this.myForm.controls['sku']
 
     // 监听变化
     /*
@@ -45,7 +45,7 @@ export class EventEmitterComponent implements OnInit {
       console.log('sku changed to:', value);
     }
     );
-    this.nameForm.valueChanges.subscribe(
+    this.myForm.valueChanges.subscribe(
     (form: any) => {
       console.log('form changed to:', form);
     }
