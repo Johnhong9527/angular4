@@ -1,0 +1,45 @@
+<p>
+  <input type="text" #newquery
+         [value]="query"
+         (keydown.enter)="submit(newquery.value)">
+  <button (click)="submit(newquery.value)">Search</button>
+</p>
+
+<div *ngIf="results">
+  <div *ngIf="!results.length">
+    No tracks were found with the term '{{query}}'
+  </div>
+
+  <div *ngIf="results.length">
+    <h3>Results</h3>
+    <div class="row">
+      <div class="col-sm-6 col-md-4" *ngFor="let t of results">
+        <div class="thumbnail">
+          <div class="content">
+            <img src="{{t.album.images[0].url}}" class="img-responsive" alt="">
+            <div class="caption">
+              <h5>
+                <a [routerLink]="['/artists', t.artists[0].id]">
+                  {{ t.artists[0].name }}
+                </a>
+              </h5>
+              <br>
+              <p>
+                <a [routerLink]="['/tracks', t.id]">
+                  {{ t.name }}
+                </a>
+              </p>
+            </div>
+            <div class="attribution">
+              <h5>
+                <a [routerLink]="['/albums', t.album.id]">
+                  {{ t.album.name }}
+                </a>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

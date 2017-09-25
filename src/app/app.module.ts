@@ -3,11 +3,15 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {AppComponent} from './app.component';
-import {RouterComponent} from './router/router.component';
-import {AboutComponent} from './about/about.component';
-import {HomeComponent} from './home/home.component';
-import {ContactComponent} from './contact/contact.component';
+import {RouterComponent} from './routerID/router/router.component';
+import {AboutComponent} from './routerID/about/about.component';
+import {HomeComponent} from './routerID/home/home.component';
+import {ContactComponent} from './routerID/contact/contact.component';
 import {APP_BASE_HREF, LocationStrategy, HashLocationStrategy} from "@angular/common";
+import { SearchComponent } from './search/search.component';
+import { ArtistComponent } from './artist/artist.component';
+import { AlbumComponent } from './album/album.component';
+import { TrackComponent } from './track/track.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},  // 默认首页设置
@@ -24,7 +28,11 @@ const routes: Routes = [
     RouterComponent,
     AboutComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    SearchComponent,
+    ArtistComponent,
+    AlbumComponent,
+    TrackComponent
   ],
   imports: [
     BrowserModule,
