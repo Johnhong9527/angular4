@@ -12,7 +12,7 @@ import {APP_BASE_HREF, LocationStrategy, HashLocationStrategy} from "@angular/co
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},  // 默认首页设置
   {path: 'home', component: HomeComponent}, // 首页模块
-  {path: 'about', component: AboutComponent}, // 关于模块
+  {path: 'about/:id', component: AboutComponent}, // 关于模块
   {path: 'contact', component: ContactComponent}, // 文章内容
   {path: 'contactus', redirectTo: 'contact'}, // 所有文章内容
 ];
